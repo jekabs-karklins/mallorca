@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Color Palette Preview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="index.css" />
+  <style>
+    .color-box {
+      @apply flex flex-col items-center justify-center text-sm font-medium rounded-lg shadow-md;
+      height: 5rem;
+    }
+  </style>
+</head>
+<body class="p-6 bg-background text-foreground">
+  <h1 class="text-2xl font-bold mb-4">Color Palette</h1>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <!-- Example list of color variables -->
+    <div class="color-box" style="background-color:hsl(var(--background)); color:hsl(var(--foreground))">
+      background
+    </div>
+    <div class="color-box" style="background-color:hsl(var(--foreground)); color:hsl(var(--background))">
+      foreground
+    </div>
+    <div class="color-box" style="background-color:hsl(var(--primary)); color:hsl(var(--primary-foreground))">
+      primary
+    </div>
+    <div class="color-box" style="background-color:hsl(var(--primary-light)); color:hsl(var(--primary-foreground))">
+      primary-light
+    </div>
+    <div class="color-box" style="background-color:hsl(var(--primary-glow)); color:hsl(var(--primary-foreground))">
+      primary-glow
+    </div>
+    <div class="color-box" style="background-color:hsl(var(--secondary)); color:hsl(var(--secondary-foreground))">
+      secondary
+    </div>
+    <div class="color-box" style="background-color:hsl(var(--accent)); color:hsl(var(--accent-foreground))">
+      accent
+    </div>
+    <div class="color-box" style="background-color:hsl(var(--muted)); color:hsl(var(--muted-foreground))">
+      muted
+    </div>
+    <div class="color-box" style="background-color:hsl(var(--destructive)); color:hsl(var(--destructive-foreground))">
+      destructive
+    </div>
+    <div class="color-box" style="background-color:hsl(var(--border)); color:hsl(var(--foreground))">
+      border
+    </div>
+    <div class="color-box" style="background-color:hsl(var(--input)); color:hsl(var(--foreground))">
+      input
+    </div>
+    <div class="color-box" style="background-color:hsl(var(--ring)); color:hsl(var(--foreground))">
+      ring
+    </div>
+  </div>
+
+  <button class="mt-6 px-4 py-2 bg-primary text-primary-foreground rounded-md" 
+          onclick="document.body.classList.toggle('dark')">
+    Toggle Dark Mode
+  </button>
+</body>
+</html>

@@ -1,0 +1,14 @@
+node_modules
+public/audio/
+.git
+.npmrc
+build/audio
+temp
+logs
+.cache
+.vscode
+*.log
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
