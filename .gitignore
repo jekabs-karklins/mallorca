@@ -1,27 +1,71 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
-/node_modules
-/.pnp
+# Dependencies
+node_modules/
+.pnp/
 .pnp.js
 
-/public/audio
+# Build output
+dist/
+build/
+out/
+.next/
+storybook-static/
 
-# testing
-/coverage
+# Vite cache
+.vite/
+node_modules/.vite/
 
-# production
-/build
+# Testing / Coverage
+coverage/
+.nyc_output/
 
-# misc
-.DS_Store
-.env
-.env.production
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
+# Logs
+logs/
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment variables (keep example committed)
+.env
+.env.*
+!.env.example
+
+# Public large assets (kept out of git)
+/public/audio
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
+
+# Other caches
+.cache/
+.parcel-cache/
+.eslintcache
+
+# Yarn (Berry) artifacts
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.yarn/build-state.yml
+.yarn/install-state.gz
