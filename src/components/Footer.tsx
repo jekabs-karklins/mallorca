@@ -46,12 +46,10 @@ export const Footer = () => {
           {/* About */}
           <div className="space-y-4">
             <h3 className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              EmpowerHer Revival
+              &lt;Nosaukums&gt;
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Dedicated to restoring strength and hope for women emerging from abusive relationships 
-              through holistic healing and transformative experiences.
-            </p>
+ Veltīts spēka un cerības atjaunošanai sievietēm, kuras izkļūst no vardarbīgām attiecībām, caur holistisku dziedināšanu un pārveidojošām pieredzēm.            </p>
           </div>
 
           {/* Contact */}
@@ -75,7 +73,7 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="font-semibold text-lg">Svar</h4>
+            <h4 className="font-semibold text-lg">Saites</h4>
             <div className="space-y-2 text-sm">
               <div>
                 <a href="#program" className="text-muted-foreground hover:text-foreground transition-colors">
