@@ -1,5 +1,6 @@
 import { Button } from "./ui/button";
 import { ArrowDown } from "lucide-react";
+import { track } from "../lib/analytics";
 import heroImage from "../assets/mallorca-hero.jpg";
 
 export const Hero = () => {
@@ -34,7 +35,10 @@ export const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <Button
               size="xl"
-              onClick={scrollToVideo}
+              onClick={() => {
+                track("CTA Clicked", { location: "Hero", cta: "Watch Our Story" });
+                scrollToVideo();
+              }}
               className="group"
             >
               Noskaties mūsu stāstu
@@ -43,7 +47,10 @@ export const Hero = () => {
             <Button
               variant="glass"
               size="xl"
-              onClick={() => document.getElementById('program')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => {
+                track("CTA Clicked", { location: "Hero", cta: "Learn More" });
+                document.getElementById('program')?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               Uzzināt vairāk
             </Button>

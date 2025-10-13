@@ -1,5 +1,6 @@
 import { Button } from "./ui/button";
 import { ShoppingCart } from "lucide-react";
+import { track } from "../lib/analytics";
 
 export const VideoSection = () => {
   return (
@@ -54,7 +55,10 @@ export const VideoSection = () => {
             <Button
               size="xl"
               className="group"
-              onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
+              onClick={() => {
+                track("CTA Clicked", { location: "VideoSection", cta: "Checkout with Stripe" });
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+              }}
             >
               <ShoppingCart className="mr-2 group-hover:scale-110 transition-transform" />
               Gatava uzsākt pārmaiņu ceļu?
