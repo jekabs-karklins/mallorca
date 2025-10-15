@@ -11,23 +11,7 @@ const calculateOrderAmount = () => {
 };
 
 export const createPaymentIntent = t.procedure.mutation(async ({ ctx }) => {
-  const user = await getUserFromToken((ctx as DabContextType).token);
 
-  if (!user) {
-    throw new TRPCError({
-      code: "UNAUTHORIZED",
-      cause: "No user for token found",
-      message: "Can not continue with payment because, No valid user logged in",
-    });
-  }
-
-  if (user.membershipEndDate && user.membershipEndDate > new Date()) {
-    throw new TRPCError({
-      code: "BAD_REQUEST",
-      cause: "User already has a membership ",
-      message: "Can not continue because use already has a membership",
-    });
-  }
   const paymentIntent = await stripe.paymentIntents.create({
     amount: calculateOrderAmount(),
     currency: "dkk",
@@ -35,10 +19,10 @@ export const createPaymentIntent = t.procedure.mutation(async ({ ctx }) => {
       enabled: true,
     },
     metadata: {
-      userId: user.id,
-      oauthSub: user.oauthSub,
+      userId: null,
+      oauthSub: null,
     },
-    receipt_email: user.email,
+    receipt_email: 'someemail@gmail.mail',
   });
 
   return {

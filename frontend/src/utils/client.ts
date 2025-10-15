@@ -6,7 +6,7 @@ import { createTRPCProxyClient, httpBatchLink } from "@trpc/client";
 export const client = createTRPCProxyClient<AppRouter>({
   links: [
     httpBatchLink({
-      url: process.env.REACT_APP_TRCP_URL,
+      url: import.meta.env.VITE_TRCP_URL,
       fetch(url, options) {
         return fetch(url, {
           ...options,

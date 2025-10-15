@@ -4,6 +4,10 @@ import { sessionReplayPlugin } from '@amplitude/plugin-session-replay-browser';
 let initialized = false;
 
 export function initAnalytics() {
+  if(import.meta.env.ENABLE_ANALYTICS !== 'true') {
+    console.log('Analytics disabled via environment variable');
+    return;
+  }
   if (initialized) return;
 
   amplitude.init('be7769bf5f16270a6d589ba750d165d9', {

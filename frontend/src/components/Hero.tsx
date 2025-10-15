@@ -1,11 +1,15 @@
+import { useState } from "react";
 import { Button } from "./ui/button";
 import { ArrowDown, ShoppingBag } from "lucide-react";
 import { track } from "../lib/analytics";
+import { PurchaseModal } from "./PurchaseModal";
 import heroImage from "../assets/mallorca-hero.jpg";
 
 export const Hero = () => {
+  const [isPurchaseModalOpen, setIsPurchaseModalOpen] = useState(false);
+
   const purchaseCourse = () => {
-    // Implement your purchase logic here, e.g., redirect to checkout
+    setIsPurchaseModalOpen(true);
   };
 
   return (
@@ -29,7 +33,7 @@ export const Hero = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-muted max-w-3xl mx-auto leading-relaxed">
-            Šajā sarunā saņemsi teorētisku bāzi zināšanām, kas ir vardarbība un tās esošās vai potenciālās izpausmes partnerattiecībās. Izpildot testu nonāksi tuvāk atbildei, vai tavās attiecībās ir reāli draudi vardarbībai. Dalīšos ar savu pieredzi, kas ļāva man saprast, ka esmu upuris, cik igu laiku tas var aizņemt, kā arī to, kas mani mudināja no šīs lomas atteikties. 
+            Šajā sarunā saņemsi teorētisku bāzi zināšanām, kas ir vardarbība un tās esošās vai potenciālās izpausmes partnerattiecībās. Izpildot testu nonāksi tuvāk atbildei, vai tavās attiecībās ir reāli draudi vardarbībai. Dalīšos ar savu pieredzi, kas ļāva man saprast, ka esmu upuris, cik igu laiku tas var aizņemt, kā arī to, kas mani mudināja no šīs lomas atteikties.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
@@ -62,6 +66,12 @@ export const Hero = () => {
       {/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <ArrowDown className="w-6 h-6 text-muted-foreground" />
       </div> */}
+
+      {/* Purchase Modal */}
+      {isPurchaseModalOpen && <PurchaseModal
+        open={isPurchaseModalOpen}
+        onOpenChange={setIsPurchaseModalOpen}
+      />}
     </header>
   );
 };

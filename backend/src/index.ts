@@ -26,8 +26,14 @@ const appRouter = t.router({
 });
 
 const app = express();
+
+// Configure CORS properly
+app.use(cors({
+  origin: 'http://localhost:8080',
+  credentials: true,
+}));
+
 app.use(express.static("public"));
-app.use(cors());
 app.use(cookieParser());
 app.use(process.env.STRIPE_PATH!, stripeRouter);
 app.use(express.json());
