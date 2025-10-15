@@ -40,14 +40,11 @@ jobs:
             type=ref,event=branch
             type=sha
 
-      - name: Change to frontend directory
-        run: cd frontend
-
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: .
-          file: ./Dockerfile
+          context: ./frontend
+          file: ./frontend/Dockerfile
           push: true
           provenance: false
           tags: ${{ steps.meta.outputs.tags }}
