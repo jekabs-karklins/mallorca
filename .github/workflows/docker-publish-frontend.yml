@@ -49,3 +49,9 @@ jobs:
           provenance: false
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            VITE_STRIPE_PUBLISHABLE_KEY=pk_test_51SIDJuL6R1BM9W3rlKg2Xedkq7XNTTJnUFuvj7dvp70rCW2TELcHWtEBadEYfDdEEdCJdUmtMDtPvbDsMAPWwfKO00jH8n9JlI
+            VITE_TRCP_URL=https://demo.enthusiaststudio.com/trpc
+            VITE_BASE_URL=https://demo.enthusiaststudio.com
+            GENERATE_SOURCEMAP=false
+            VITE_ENABLE_ANALYTICS=false
