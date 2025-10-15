@@ -1,0 +1,14 @@
+version: "3.1"
+
+services:
+  db:
+    image: postgres:16.2-alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: dap
+      POSTGRES_USER: dap
+      POSTGRES_DB: dap
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./backend/db_patches/:/docker-entrypoint-initdb.d/

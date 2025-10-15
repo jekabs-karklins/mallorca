@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "nodenext",
+    "esModuleInterop": true,
+    "target": "es2019",
+    "moduleResolution": "nodenext",
+    "sourceMap": true,
+    "outDir": "build",
+    "incremental": true,
+    "noImplicitAny": true,
+    "strict": true,
+  },
+  "include": ["src/**/*"]
+}

@@ -8,10 +8,10 @@ const Index = () => {
   return (
     <main className="min-h-screen">
       <Hero />
-      <VideoSection />
+      {/* <VideoSection /> */}
       {/* <ProgramOverview /> */}
       {/* <MallorcaSection /> */}
-      <Footer />
+      {/* <Footer /> */}
     </main>
   );
 };
