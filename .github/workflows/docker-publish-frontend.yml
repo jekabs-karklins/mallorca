@@ -40,6 +40,9 @@ jobs:
             type=ref,event=branch
             type=sha
 
+      - name: Change to frontend directory
+        run: cd frontend
+
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
