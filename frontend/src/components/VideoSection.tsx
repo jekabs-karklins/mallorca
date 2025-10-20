@@ -1,21 +1,14 @@
 import { Button } from "./ui/button";
 import { ShoppingCart } from "lucide-react";
 import { track } from "../lib/analytics";
+import { useNavigate } from "react-router-dom";
 
 export const VideoSection = () => {
+  const navigate = useNavigate();
   return (
     <section id="video-section" className="py-20 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto space-y-12">
-          <div className="text-center space-y-4 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold">
-              Tavs ceļojums uz {" "}
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                atveseļošanos sākas šeit.
-              </span>
-
-            </h2>
-          </div>
 
           {/* Video Placeholder */}
           <div className="relative aspect-video rounded-2xl overflow-hidden shadow-[var(--shadow-strong)] hover:shadow-[var(--shadow-strong)] hover:scale-[1.02] transition-all duration-300">
@@ -57,7 +50,7 @@ export const VideoSection = () => {
               className="group"
               onClick={() => {
                 track("CTA Clicked", { location: "VideoSection", cta: "Checkout with Stripe" });
-                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+                navigate("/landing");
               }}
             >
               <ShoppingCart className="mr-2 group-hover:scale-110 transition-transform" />

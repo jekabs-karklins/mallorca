@@ -203,8 +203,8 @@ export function PurchaseModal({ open, onOpenChange, onError }: PurchaseModalProp
     };
 
     return (
-        <Dialog open={open} onOpenChange={onOpenChange}>
-            <DialogContent className="max-w-md">
+        <Dialog open={open} onOpenChange={onOpenChange} >
+            <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto">
                 <DialogHeader>
                     <DialogTitle className="flex items-center gap-2">
                         <ShoppingBag className="w-5 h-5 text-primary" />
