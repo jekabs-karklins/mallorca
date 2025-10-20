@@ -5,9 +5,9 @@ services:
     image: postgres:16.2-alpine
     restart: always
     environment:
-      POSTGRES_PASSWORD: dap
-      POSTGRES_USER: dap
-      POSTGRES_DB: dap
+      POSTGRES_PASSWORD: nuvia
+      POSTGRES_USER: nuvia
+      POSTGRES_DB: nuvia
     ports:
       - "5432:5432"
     volumes:

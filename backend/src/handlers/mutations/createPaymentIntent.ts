@@ -14,7 +14,7 @@ export const createPaymentIntent = t.procedure.mutation(async ({ ctx }) => {
 
   const paymentIntent = await stripe.paymentIntents.create({
     amount: calculateOrderAmount(),
-    currency: "dkk",
+    currency: "eur",
     automatic_payment_methods: {
       enabled: true,
     },
@@ -22,7 +22,6 @@ export const createPaymentIntent = t.procedure.mutation(async ({ ctx }) => {
       userId: null,
       oauthSub: null,
     },
-    receipt_email: 'someemail@gmail.mail',
   });
 
   return {

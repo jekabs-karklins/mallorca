@@ -1,17 +1,16 @@
-import { Hero } from "@/components/Hero";
-import { VideoSection } from "@/components/VideoSection";
-import { ProgramOverview } from "@/components/ProgramOverview";
-import { MallorcaSection } from "@/components/MallorcaSection";
 import { Footer } from "@/components/Footer";
+import Promo from "@/components/Promo";
+import { TopBar } from "@/components/TopBar";
 
 const Index = () => {
   return (
     <main className="min-h-screen">
-      <Hero />
-      {/* <VideoSection /> */}
-      {/* <ProgramOverview /> */}
-      {/* <MallorcaSection /> */}
-      {/* <Footer /> */}
+        <TopBar user="" />
+      {/* <VideoSection />
+      <ProgramOverview />
+      <MallorcaSection /> */}
+      <Promo />
+      <Footer />
     </main>
   );
 };

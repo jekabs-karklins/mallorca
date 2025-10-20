@@ -1,52 +1,15 @@
-import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, Heart } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 export const Footer = () => {
   return (
     <footer className="bg-gradient-to-b from-background to-muted/30 border-t border-border">
-      {/* Final CTA Section */}
-      <div className="py-20 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h2 className="text-3xl md:text-5xl font-bold">
-              Laiks atgūt {" "}
-              <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-                savu dzīvi!
-              </span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Esmu sagatavojusi šo kursu, lai palīdzētu sievietēm kā tu atpazīt un pārvarēt vardarbīgas attiecības.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button 
-                variant="hero" 
-                size="xl"
-                className="group"
-              >
-                <Heart className="mr-2 group-hover:scale-110 transition-transform" />
-                Iegādāties kursu
-              </Button>
-              <Button 
-                variant="glass" 
-                size="xl"
-              >
-                Sarunāt konsultāciju
-              </Button>
-            </div>
-            <p className="text-sm text-muted-foreground pt-4">
-              Vietu skaits ierobežots • Nākamais retrīts sāksies drīzumā • Pieejami maksājumu plāni
-            </p>
-          </div>
-        </div>
-      </div>
-
       {/* Footer Content */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* About */}
           <div className="space-y-4">
             <h3 className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              &lt;Nosaukums&gt;
+              Nuvia
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
  Veltīts spēka un cerības atjaunošanai sievietēm, kuras izkļūst no vardarbīgām attiecībām, caur holistisku dziedināšanu un pārveidojošām pieredzēm.            </p>

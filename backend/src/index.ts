@@ -22,14 +22,13 @@ const appRouter = t.router({
   logout: logout,
   getCurrentUser: getCurrentUser,
   getProductPrice: getProductPrice,
-
+  
 });
 
 const app = express();
 
-// Configure CORS properly
 app.use(cors({
-  origin: 'http://localhost:8080',
+  origin: process.env.FRONTEND_BASE_URL,
   credentials: true,
 }));
 
