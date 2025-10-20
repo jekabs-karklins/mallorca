@@ -1,11 +1,11 @@
 import { Footer } from "@/components/Footer";
 import Promo from "@/components/Promo";
-import { TopBar } from "@/components/TopBar";
+import TopBar from "@/components/TopBar";
 
 const Index = () => {
   return (
     <main className="min-h-screen">
-        <TopBar user="" />
+        <TopBar />
       {/* <VideoSection />
       <ProgramOverview />
       <MallorcaSection /> */}
