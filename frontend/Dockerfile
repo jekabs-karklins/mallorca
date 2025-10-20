@@ -3,10 +3,19 @@
 # 1) Builder stage
 FROM node:20-slim AS builder
 
-# Install dependencies required by some node modules if needed (mostly optional for Vite)
-# RUN apt-get update && apt-get install -y --no-install-recommends \
-#   python3 make g++ \
-#   && rm -rf /var/lib/apt/lists/*
+# Accept build arguments
+ARG VITE_STRIPE_PUBLISHABLE_KEY
+ARG VITE_TRCP_URL
+ARG VITE_BASE_URL
+ARG GENERATE_SOURCEMAP
+ARG VITE_ENABLE_ANALYTICS
+
+# Set environment variables from build args
+ENV VITE_STRIPE_PUBLISHABLE_KEY=${VITE_STRIPE_PUBLISHABLE_KEY}
+ENV VITE_TRCP_URL=${VITE_TRCP_URL}
+ENV VITE_BASE_URL=${VITE_BASE_URL}
+ENV GENERATE_SOURCEMAP=${GENERATE_SOURCEMAP}
+ENV VITE_ENABLE_ANALYTICS=${VITE_ENABLE_ANALYTICS}
 
 WORKDIR /app
 
